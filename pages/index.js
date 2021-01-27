@@ -5,13 +5,11 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `
 const Background = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
+  background-image: url("https://daqxzxzy8xq3u.cloudfront.net/wp-content/uploads/2019/03/29142631/nextjs-now-2.jpg");
+  height: 700px;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  flex: 1;
+  display: flex;
 `
 
 const Form = styled.div`
