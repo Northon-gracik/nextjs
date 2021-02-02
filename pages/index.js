@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import QuizBackground from '../src/components/QuizBackground'
 
+import axios from 'axios'
+
 const Title = styled.h1`
   font-size: 50px;
   color: ${({ theme }) => theme.colors.primary};
@@ -19,13 +21,29 @@ const Form = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
 `
 
-export default function Home() {
+export default function Home( props ) {
   return (
     <QuizBackground>
       <Form>
-        adsdsa
+        <p>
+          teste {props.name}
+        </p>
+        
       </Form>      
     </QuizBackground>
 
   )
+}
+
+export async function  getSeverSideProps(context) {
+  // const name = axios.get(`https://rickandmortyapi.com/api/character/1`)
+  //   .then(resp => resp.name)
+  
+  const name = 'nathalia'
+  console.log(name)
+  return {
+    props: {
+      name
+    }
+  }
 }
