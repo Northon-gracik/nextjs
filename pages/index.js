@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import QuizBackground from '../src/components/QuizBackground'
-
+import { useState } from 'react'
 import axios from 'axios'
+
 
 const Title = styled.h1`
   font-size: 50px;
@@ -16,17 +17,24 @@ const Background = styled.div`
 `
 
 const Form = styled.div`
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 350px;
   background-color: ${({ theme }) => theme.colors.primary};
 `
 
-export default function Home( props ) {
+function Home( props ) {
+  // const [name, setName] = useState('')
+
+  // axios.get(`https://rickandmortyapi.com/api/character/1`)
+  //   .then(resp => setName(resp.name))
+  
   return (
     <QuizBackground>
       <Form>
         <p>
-          teste {props.name}
+          teste {JSON.stringify(props.name)}
         </p>
         
       </Form>      
@@ -35,15 +43,23 @@ export default function Home( props ) {
   )
 }
 
-export async function  getSeverSideProps(context) {
-  // const name = axios.get(`https://rickandmortyapi.com/api/character/1`)
-  //   .then(resp => resp.name)
-  
-  const name = 'nathalia'
-  console.log(name)
-  return {
-    props: {
-      name
-    }
-  }
+Home.getInitialProps = async (ctx) => {
+  const res = await fetch(`https://rickandmortyapi.com/api/character/1`)
+  const json = await res.json()
+  const name = await json.name
+  return{ name: name }
 }
+
+export default Home;
+// export async function  getSeverSideProps(context) {
+//   // const name = axios.get(`https://rickandmortyapi.com/api/character/1`)
+//   //   .then(resp => resp.name)
+  
+//   let name = 'nathalia'
+//   console.log(name)
+//   return {
+//     props: {
+//       name
+//     }
+//   }
+// }
