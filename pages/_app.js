@@ -8,20 +8,17 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const [themeLight, setThemeLight] = useState(true)
-
-let theme = [{
-  primary: '#0070f3',
-  background : '#F9F9F9',
-  },
-  {
-    background: '#181818',
-
-  }
-]
-
 const theme = {
-  colors: theme[themeLight ? 0 : 1]
+  colors: {
+    Light: {
+      primary: '#0070f3',
+      background : '#F9F9F9',
+    },
+    Dark: {
+      primary: '#ee81b2',
+      background: '#181818',
+    }
+  } 
 }
 
 export default function App({ Component, pageProps }) {
