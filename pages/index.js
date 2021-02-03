@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Background from '../src/components/Background'
+// import Background from '../src/components/Background'
 import { useState } from 'react'
 import axios from 'axios'
 
@@ -19,7 +19,7 @@ const Background = styled.div`
   min-height: 667px;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.Background}
+  background-color: ${({ theme }) => theme.colors.Dark.background}
 `
 
 const Form = styled.div`
@@ -28,7 +28,7 @@ const Form = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 350px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.Dark.primary};
 `
 
 function Home( props ) {
