@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import QuizBackground from '../src/components/QuizBackground'
+import Background from '../src/components/QuizBackground'
 import { useState } from 'react'
 import axios from 'axios'
 
