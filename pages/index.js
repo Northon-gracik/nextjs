@@ -9,14 +9,21 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `
 const Background = styled.div`
+  display: flex;
   width: 100%;
-  background-size: cover;
+  /* background-size: cover;
   background-position: center;
-  background-image: url("https://daqxzxzy8xq3u.cloudfront.net/wp-content/uploads/2019/03/29142631/nextjs-now-2.jpg");
+  background-image: url("https://daqxzxzy8xq3u.cloudfront.net/wp-content/uploads/2019/03/29142631/nextjs-now-2.jpg"); */
   flex: 1;
+  height: 100%;
+  min-height: 667px;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.Background}
 `
 
 const Form = styled.div`
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -25,20 +32,15 @@ const Form = styled.div`
 `
 
 function Home( props ) {
-  // const [name, setName] = useState('')
-
-  // axios.get(`https://rickandmortyapi.com/api/character/1`)
-  //   .then(resp => setName(resp.name))
-  
   return (
-    <QuizBackground>
+    <Background>
       <Form>
         <p>
-          teste {JSON.stringify(props.name)}
+          {props.name}
         </p>
         
       </Form>      
-    </QuizBackground>
+    </Background>
 
   )
 }
