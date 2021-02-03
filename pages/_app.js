@@ -8,9 +8,19 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const [themeLight, setThemeLight] = useState(true)
+
+let theme
+
+if()
+
 const theme = {
-  colors: {
+  colorsLight: {
     primary: '#0070f3',
+    background: '#F9F9F9'
+  },
+  colorsNight: {
+    background: '#181818'
   },
 }
 
