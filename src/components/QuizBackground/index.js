@@ -2,6 +2,8 @@
 import styled from 'styled-components';
 
 const QuizBackground = styled.div`
+  display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   background-size: cover;
@@ -9,8 +11,9 @@ const QuizBackground = styled.div`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-color: ${({ theme }) => theme.colors.mainBg || "#f00"};
   flex: 1;
+  background-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Flinguinecode.com%2Fpost%2Fdeploy-nextjs-custom-server-to-now-2&psig=AOvVaw09Iuhie2oFxm8a2FrjPaIY&ust=1611876845456000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDBkqmjve4CFQAAAAAdAAAAABAh";
   @media screen and (max-width: 500px) {
-    background-image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Flinguinecode.com%2Fpost%2Fdeploy-nextjs-custom-server-to-now-2&psig=AOvVaw09Iuhie2oFxm8a2FrjPaIY&ust=1611876845456000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDBkqmjve4CFQAAAAAdAAAAABAh";
+    
     &:after {
       content: "";
       background-size: cover;
