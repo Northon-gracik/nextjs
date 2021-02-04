@@ -4,8 +4,7 @@ import axios from 'axios'
 
 
 const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.Dark.primary};
 `
 const Background = styled.div`
   display: flex;
@@ -42,12 +41,6 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  .input{
-    border: 3px solid ${({ theme }) => theme.colors.Dark.contrast};
-  }
-  .button{
-    background-color: ${({ theme }) => theme.colors.Dark.contrast};
-  }  
 `
 
 const Form = styled.form`
@@ -56,18 +49,21 @@ const Form = styled.form`
   height: 125px;
   justify-content: space-between;
   
-  
 `
 
 const Input = styled.input`
   border: 2px solid ${({ theme }) => theme.colors.Dark.contrast};
+  padding: 5px;
+  border-radius: 10px 0px 10px 0px;
 `
+
 const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.Dark.contrast};
   border: 0px;
-  color: ${({ theme }) => theme.colors.Dark.text};
+  color: ${({ theme }) => theme.colors.Dark.primary};
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 10px 0px 10px 0px;
+  font-weight: 700;
 `
 
 function Home( props ) {
@@ -83,7 +79,7 @@ function Home( props ) {
     <Background>
       <Card>
         <Header>
-          <h1>Login</h1>
+          <Title>Login</Title>
         </Header>
         <Content>
           <p>
