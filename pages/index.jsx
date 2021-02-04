@@ -28,7 +28,7 @@ const Card = styled.div`
   flex-direction: column;
   border: 3px solid ${({ theme }) => theme.colors.Dark.contrast};
   overflow: hidden;
-  border-radius: 10px
+  border-radius: 20px 0px 20px 0px;
 `
 const Header = styled.div`
   display: flex;
@@ -42,8 +42,32 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  .input{
+    border: 3px solid ${({ theme }) => theme.colors.Dark.contrast};
+  }
+  .button{
+    background-color: ${({ theme }) => theme.colors.Dark.contrast};
+  }  
 `
 
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  height: 125px;
+  justify-content: space-between;
+  .h1{
+    color: ${({ theme }) => theme.colors.Dark.text}
+  }
+  
+`
+
+const Input = styled.input`
+  border: 2px solid ${({ theme }) => theme.colors.Dark.contrast};
+`
+const Button = styled.button`
+  background-color: ${({ theme }) => theme.colors.Dark.contrast};
+  border: 0px;
+`
 
 function Home( props ) {
   const [email, setEmail] = useState('');
@@ -58,30 +82,29 @@ function Home( props ) {
     <Background>
       <Card>
         <Header>
-          <p>Header</p>
+          <h1>Login</h1>
         </Header>
         <Content>
           <p>
-            <form 
+            <Form 
               onSubmit={handleSubmit}
-              flex-direction="column"
             >
-              <input
+              <Input
                 type="email"
                 onChange={e => setEmail(e.target.value)}
                 autoComplete="off"
               />
-              {/* <input
+              <Input
                 type="password"
                 onChange={e => setPassword(e.target.value)}
                 autoComplete="off"
-              /> */}
-              <button 
+              />
+              <Button 
                 type="submit"
               >
                 Login
-              </button>
-            </form>
+              </Button>
+            </Form>
           </p>
         </Content>
       </Card>      
