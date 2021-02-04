@@ -1,40 +1,42 @@
 import { MongoClient, Db} from 'mongodb';
 import url from 'url';
 
-let cacheDb: Db = null;
+// let cacheDb;
 
-const connectToDatabase = async ( uri ) => {
+// const connectToDatabase = async ( uri ) => {
 
-    if( cacheDb ){
-        return cacheDb
-    }
+//     if( cacheDb ){
+//         return cacheDb
+//     }
 
-    const client = await MongoClient.connect( uri, { 
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
+//     const client = await MongoClient.connect( uri, { 
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//     });
     
-    const dbname = url.parse(uri).pathname.substr(1);
+//     const dbname = url.parse(uri).pathname.substr(1);
 
-    const db = client.db(dbname);
+//     const db = client.db(dbname);
 
-    cacheDb = db;
+//     cacheDb = db;
 
-    return db;
-} 
+//     return db;
+// } 
 
 export default async (req, res) => {
-    const {email} = req.body;
+    // const {email} = req.body;
 
-    const db = await connectToDatabase(process.env.MONGODB_URI);
+    // const db = await connectToDatabase(process.env.MONGODB_URI);
 
-    const collection = db.collection('teste');
+    // const collection = db.collection('teste');
 
-    await collection.insertOne({
-        email: email,
-        subscribedAt: new Date(),
+    // await collection.insertOne({
+    //     email: email,
+    //     subscribedAt: new Date(),
 
-    })
+    // })
 
-    res.status(201).json({ ok: true})
+    // res.status(201).json({ ok: true})
+
+    res.json(url.parse(process.env.MONGODB_URI).pathname.substr(1))
 }
