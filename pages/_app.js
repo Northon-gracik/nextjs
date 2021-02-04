@@ -18,7 +18,7 @@ const theme = {
       primary: '#4298B5',
       background: '#181818',
       contrast: '#ffb999',
-      text: '#FFFFFF'
+      text: '#777777'
     }
   } 
 }
