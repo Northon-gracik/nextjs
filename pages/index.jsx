@@ -55,9 +55,7 @@ const Form = styled.form`
   flex-direction: column;
   height: 125px;
   justify-content: space-between;
-  .h1{
-    color: ${({ theme }) => theme.colors.Dark.text}
-  }
+  
   
 `
 
@@ -67,6 +65,9 @@ const Input = styled.input`
 const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.Dark.contrast};
   border: 0px;
+  color: ${({ theme }) => theme.colors.Dark.text};
+  padding: 5px;
+  border-radius: 10px;
 `
 
 function Home( props ) {
