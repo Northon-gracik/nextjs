@@ -15,9 +15,10 @@ const theme = {
       background : '#F9F9F9',
     },
     Dark: {
-      primary: '#ff5555',
+      primary: '#4298B5',
       background: '#181818',
-      contrast: '#FF85CB'
+      contrast: '#ffb999',
+      text: '#FFFFFF'
     }
   } 
 }
