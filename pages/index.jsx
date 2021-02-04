@@ -71,11 +71,11 @@ function Home( props ) {
                 onChange={e => setEmail(e.target.value)}
                 autoComplete="off"
               />
-              <input
+              {/* <input
                 type="password"
                 onChange={e => setPassword(e.target.value)}
                 autoComplete="off"
-              />
+              /> */}
               <button 
                 type="submit"
               >
@@ -91,13 +91,13 @@ function Home( props ) {
 
 }
 
-Home.getInitialProps = async (ctx) => {
+/* Home.getInitialProps = async (ctx) => {
   const res = await fetch(`https://rickandmortyapi.com/api/character/1`)
   const json
    = await res.json()
   const name = await json.name
   return{ name: name }
-}
+} */
 
 export default Home;
 // export async function  getSeverSideProps(context) {
