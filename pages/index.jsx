@@ -72,7 +72,9 @@ function Home( props ) {
 
   const handleSubmit = ( event ) => {
     event.preventDefault();
-    axios.post('/api/login', {email, password})
+    axios.get('http://localhost:8081', {email, password})
+      .then(resp => alert(JSON.stringify(resp)))
+
   }
 
   return (
